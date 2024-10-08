@@ -17,12 +17,15 @@ class CustomTextField extends StatelessWidget {
         disabledBorder: buildBorder(),
         focusedBorder: buildBorder(),
         hintText: "  Write Your Message",
-        hintStyle: TextStyle(color: Colors.black.withOpacity(.5)),
+        hintStyle: Theme.of(context).textTheme.titleSmall!.copyWith(
+          color: Colors.grey
+        ),
         suffixIcon: GestureDetector(
           onTap: onTap,
           child: Image.asset(AppAssets.sendButton))
       ),
       controller: controller,
+      style: Theme.of(context).textTheme.titleSmall,
       
     );
   }

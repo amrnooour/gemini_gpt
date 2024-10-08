@@ -27,9 +27,11 @@ class CustomListMessage extends StatelessWidget {
                             topEnd: Radius.circular(10),
                             bottomEnd: Radius.circular(10)),
                     color: Constants.messge[index].isUser
-                        ? Colors.blue
-                        : Colors.grey),
-                child: Text(Constants.messge[index].text)),
+                        ? Theme.of(context).colorScheme.primary
+                        : Theme.of(context).colorScheme.secondary),
+                child: Text(Constants.messge[index].text,
+                style: Constants.messge[index].isUser?Theme.of(context).textTheme.bodyMedium:
+                Theme.of(context).textTheme.bodySmall,)),
           ),
         );
       },

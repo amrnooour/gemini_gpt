@@ -1,18 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:gemini_gpt/core/utils/app_themes.dart';
 import 'package:gemini_gpt/features/splash/splash.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:gemini_gpt/theme_notifier.dart';
+
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    const ProviderScope(child: MyApp()));
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends ConsumerWidget {
   const MyApp({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
+  Widget build(BuildContext context,WidgetRef ref) {
+    final themeMode = ref.watch(themeProvider);
+
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Splash(),
+      home: const Splash(),
+      theme: lightMode,
+      darkTheme: darkMode,
+      themeMode: themeMode,
     );
   }
 }

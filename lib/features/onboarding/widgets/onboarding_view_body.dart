@@ -27,6 +27,7 @@ class OnboardingViewBody extends StatelessWidget {
           const Text(
             "Using the software, you can ask question\n and recive articles using artificial intelligence \n assistant",
             textAlign: TextAlign.center,
+            style: TextStyle(color: Colors.grey),
           ),
           const SizedBox(
             height: 90,
@@ -36,7 +37,7 @@ class OnboardingViewBody extends StatelessWidget {
             height: 120,
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 140),
+            padding: const EdgeInsets.symmetric(horizontal: 130),
             child: GestureDetector(
               onTap: () {
                 Navigator.pushReplacement(
